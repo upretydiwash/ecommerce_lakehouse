@@ -1,0 +1,16 @@
+{
+  "source_table": "dev.bronze.bronze_order_reviews",
+  "target_table": "dev.silver.silver_order_reviews",
+  "primary_key": ["review_id"],
+  "watermark_column": "updated_at",
+  "dedup_order_column": "updated_at",
+  "required_columns": [
+    "review_id","order_id"
+  ],
+  "capitalize_columns": [],
+  "drop_duplicates": true,
+  "remove_nulls": false,
+  "audit_columns": true,
+  "convert_columns":  {"review_score":"integer","review_creation_date":"timestamp","review_answer_timestamp": "timestamp"},
+  "derived_ts_columns" : ["review_creation_date","review_answer_timestamp"]
+}

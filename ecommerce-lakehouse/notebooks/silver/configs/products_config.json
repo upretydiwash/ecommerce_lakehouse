@@ -1,0 +1,17 @@
+{
+  "source_table": "dev.bronze.bronze_products",
+  "target_table": "dev.silver.silver_products",
+  "primary_key": ["product_id"],
+  "watermark_column": "updated_at",
+  "dedup_order_column": "updated_at",
+  "required_columns": [
+    "product_id"
+  ],
+  "capitalize_columns": [],
+  "drop_duplicates": true,
+  "remove_nulls": true,
+  "audit_columns": true,
+  "convert_columns":  {"product_name_lenght":"integer",	"product_description_lenght":"integer",	"product_photos_qty":"integer",	"product_weight_g":"double",	"product_length_cm":"double",	"product_height_cm":"double",	"product_width_cm":"double"},
+  "derived_ts_columns" : [],
+  "drop_null_columns" : ["product_id","product_category_name"]
+}

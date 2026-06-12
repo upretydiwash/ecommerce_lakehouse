@@ -1,0 +1,16 @@
+{
+  "source_table": "dev.bronze.bronze_order_payments",
+  "target_table": "dev.silver.silver_order_payments",
+  "primary_key": ["order_id"],
+  "watermark_column": "updated_at",
+  "dedup_order_column": "updated_at",
+  "required_columns": [
+    "order_id"
+  ],
+  "capitalize_columns": [],
+  "drop_duplicates": true,
+  "remove_nulls": true,
+  "audit_columns": true,
+  "convert_columns":  {"payment_sequential":"integer","payment_installments":"integer","payment_value":"double"},
+  "derived_ts_columns" : []
+}

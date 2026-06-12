@@ -1,0 +1,17 @@
+{
+  "source_table": "dev.bronze.bronze_sellers",
+  "target_table": "dev.silver.silver_sellers",
+  "primary_key": ["seller_id"],
+  "watermark_column": "updated_at",
+  "dedup_order_column": "updated_at",
+  "required_columns": [
+    "seller_id"
+  ],
+  "capitalize_columns": ["seller_city"],
+  "drop_duplicates": true,
+  "remove_nulls": true,
+  "audit_columns": true,
+  "convert_columns":  {},
+  "derived_ts_columns" : [],
+  "drop_null_columns" : ["seller_id"]
+}

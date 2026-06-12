@@ -1,0 +1,17 @@
+{
+  "source_table": "dev.bronze.bronze_orders",
+  "target_table": "dev.silver.silver_orders",
+  "primary_key": ["order_id"],
+  "watermark_column": "updated_at",
+  "dedup_order_column": "updated_at",
+  "required_columns": [
+    "order_id","customer_id"
+  ],
+  "capitalize_columns": [],
+  "drop_duplicates": true,
+  "remove_nulls": true,
+  "audit_columns": true,
+  "convert_columns":  {"order_purchase_timestamp":"timestamp","order_approved_at":"timestamp","order_delivered_carrier_date": "timestamp","order_delivered_customer_date":"timestamp","order_estimated_delivery_date":"timestamp"},
+  "derived_ts_columns" : ["order_delivered_customer_date","order_estimated_delivery_date"],
+  "drop_null_columns" : ["order_id","customer_id"]
+}

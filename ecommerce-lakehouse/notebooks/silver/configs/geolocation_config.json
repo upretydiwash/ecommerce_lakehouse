@@ -1,0 +1,16 @@
+{
+  "source_table": "dev.bronze.bronze_geolocation",
+  "target_table": "dev.silver.silver_geolocation",
+  "primary_key": [],
+  "watermark_column": "updated_at",
+  "dedup_order_column": "updated_at",
+  "required_columns": [
+    "geolocation_lat","geolocation_lng"
+  ],
+  "capitalize_columns": ["geolocation_city"],
+  "drop_duplicates": true,
+  "remove_nulls": true,
+  "audit_columns": true,
+  "convert_columns":  {},
+  "derived_ts_columns" : []
+}

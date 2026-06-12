@@ -1,0 +1,16 @@
+{
+  "source_table": "dev.bronze.bronze_order_items",
+  "target_table": "dev.silver.silver_order_items",
+  "primary_key": ["order_id"],
+  "watermark_column": "updated_at",
+  "dedup_order_column": "updated_at",
+  "required_columns": [
+    "order_id","product_id","seller_id"
+  ],
+  "capitalize_columns": [],
+  "drop_duplicates": true,
+  "remove_nulls": true,
+  "audit_columns": true,
+  "convert_columns":  {"shipping_limit_date":"timestamp","price":"double","freight_value":"double"},
+  "derived_ts_columns" : ["shipping_limit_date"]
+}

@@ -1,0 +1,17 @@
+{
+  "source_table": "dev.bronze.bronze_prod_cat_nm_trans",
+  "target_table": "dev.silver.silver_prod_cat_nm_trans",
+  "primary_key": ["product_category_name"],
+  "watermark_column": "updated_at",
+  "dedup_order_column": "updated_at",
+  "required_columns": [
+    "product_category_name","product_category_name_english"
+  ],
+  "capitalize_columns": [],
+  "drop_duplicates": true,
+  "remove_nulls": true,
+  "audit_columns": true,
+  "convert_columns":  {},
+  "derived_ts_columns" : [],
+  "drop_null_columns" : ["product_category_name_english","product_category_name"]
+}

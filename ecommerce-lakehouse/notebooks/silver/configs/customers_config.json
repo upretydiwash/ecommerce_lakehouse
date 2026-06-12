@@ -1,0 +1,16 @@
+{
+  "source_table": "dev.bronze.bronze_customers",
+  "target_table": "dev.silver.silver_customers",
+  "primary_key": ["customer_id"],
+  "watermark_column": "updated_at",
+  "dedup_order_column": "updated_at",
+  "required_columns": [
+    "customer_id"
+  ],
+  "capitalize_columns": ["customer_city"],
+  "drop_duplicates": true,
+  "remove_nulls": true,
+  "audit_columns": true,
+  "convert_columns":  {},
+  "derived_ts_columns" : ["ingestion_time"]
+}
